@@ -121,7 +121,7 @@ const VideoPlayer = () => {
         </div>
         <button
           className="absolute top-4 right-4 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full flex items-center"
-          //   onClick={() => navigate(-1)} // Navigate to the video editor page
+          onClick={() => navigate("/videoeditor")} // Navigate back to the previous page
         >
           <X size={20} />
         </button>
@@ -493,6 +493,7 @@ const VideoPlayer = () => {
                   src={`/src/pages/images/venroll7.jpeg`}
                   alt={`Related video ${item}`}
                   className="w-full h-32 object-cover"
+
                 />
                 <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
                   3:45
