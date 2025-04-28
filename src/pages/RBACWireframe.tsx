@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import {
   Shield,
   Users,
@@ -23,7 +23,7 @@ const RBACManagement = () => {
   const [showAddUserModal, setShowAddUserModal] = useState(false);
   const [showPermissionDetails, setShowPermissionDetails] = useState(false);
   const [selectedPermission, setSelectedPermission] = useState(null);
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const roles = [
     {
@@ -208,7 +208,7 @@ const RBACManagement = () => {
     },
   ];
 
-  const toggleRole = (roleId) => {
+  const toggleRole = (roleId: SetStateAction<string>) => {
     if (expandedRole === roleId) {
       setExpandedRole(null);
     } else {
@@ -216,7 +216,7 @@ const RBACManagement = () => {
     }
   };
 
-  const handlePermissionClick = (permission) => {
+  const handlePermissionClick = (permission: SetStateAction<null>) => {
     setSelectedPermission(permission);
     setShowPermissionDetails(true);
   };
@@ -400,8 +400,9 @@ const RBACManagement = () => {
                       ))}
 
                       <div className="mt-6 flex justify-end">
-                        <button className="bg-blue-600 text-white px-4 py-2 rounded-md"
-                        onClick={() => navigate('/dashboard')}
+                        <button
+                          className="bg-blue-600 text-white px-4 py-2 rounded-md"
+                          onClick={() => navigate("/dashboard")}
                         >
                           Save Changes
                         </button>
