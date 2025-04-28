@@ -1,5 +1,4 @@
 import { SetStateAction, useState } from "react";
-
 import {
   Shield,
   Users,
@@ -210,7 +209,6 @@ const RBACManagement = () => {
   ];
 
   const toggleRole = (roleId: SetStateAction<string>) => {
-
     if (expandedRole === roleId) {
       setExpandedRole(null);
     } else {
@@ -219,7 +217,6 @@ const RBACManagement = () => {
   };
 
   const handlePermissionClick = (permission: SetStateAction<null>) => {
-
     setSelectedPermission(permission);
     setShowPermissionDetails(true);
   };
@@ -406,7 +403,7 @@ const RBACManagement = () => {
                         <button
                           className="bg-blue-600 text-white px-4 py-2 rounded-md"
                           onClick={() => navigate("/dashboard")}
-
+                        >
                           Save Changes
                         </button>
                       </div>

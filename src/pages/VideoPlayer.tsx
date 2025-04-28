@@ -493,7 +493,6 @@ const VideoPlayer = () => {
                   src={`/src/pages/images/venroll7.jpeg`}
                   alt={`Related video ${item}`}
                   className="w-full h-32 object-cover"
-
                 />
                 <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
                   3:45
