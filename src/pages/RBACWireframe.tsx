@@ -400,10 +400,8 @@ const RBACManagement = () => {
                       ))}
 
                       <div className="mt-6 flex justify-end">
-                        <button
-                          className="bg-blue-600 text-white px-4 py-2 rounded-md"
-                          onClick={() => navigate("/dashboard")}
-                        >
+                        <button className="bg-blue-600 text-white px-4 py-2 rounded-md"
+                        onClick={() => navigate('/dashboard')}                        >
                           Save Changes
                         </button>
                       </div>

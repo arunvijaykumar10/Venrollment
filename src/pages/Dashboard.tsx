@@ -187,9 +187,15 @@ const Dashboard = () => {
             <button className="text-gray-600 hover:text-gray-900">
               <Bell size={20} />
             </button>
+<<<<<<< HEAD
             {/* <button className="text-gray-600 hover:text-gray-900">
               <HelpCircle size={20} />
             </button> */}
+=======
+            <button className="text-gray-600 hover:text-gray-900">
+              <HelpCircle size={20} />
+            </button>
+>>>>>>> 5f34d30a1589b0a5907ef62095b8fc392ac75683
             <button
               className="text-gray-600 hover:text-gray-900"
               onClick={() => navigate("/brandkit")}
@@ -209,12 +215,20 @@ const Dashboard = () => {
 
               {profileDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
+<<<<<<< HEAD
                   {/* <a
+=======
+                  <a
+>>>>>>> 5f34d30a1589b0a5907ef62095b8fc392ac75683
                     href="#profile"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Your Profile
+<<<<<<< HEAD
                   </a> */}
+=======
+                  </a>
+>>>>>>> 5f34d30a1589b0a5907ef62095b8fc392ac75683
                   <a
                     href="/settings"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
