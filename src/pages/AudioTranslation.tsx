@@ -31,7 +31,7 @@ const AudioTranslationTool = () => {
   const [showTranscriptEditor, setShowTranscriptEditor] = useState(false);
   const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
   const [selectedLanguages, setSelectedLanguages] = useState(["es", "fr"]);
-  const [currentPlayingAudio, setCurrentPlayingAudio] = useState(null);
+  const [currentPlayingAudio, setCurrentPlayingAudio] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const languages = [
@@ -153,7 +153,7 @@ const AudioTranslationTool = () => {
     }, 3000);
   };
 
-  const handlePlayAudio = (language: string | SetStateAction<null>) => {
+  const handlePlayAudio = (language: string | null) => {
     if (currentPlayingAudio === language) {
       setCurrentPlayingAudio(null);
     } else {
@@ -755,8 +755,8 @@ In this video, we'll cover the key features of our retirement plan, including co
                                 </div>
                                 <div className="ml-3">
                                   <h3 className="text-sm font-medium text-gray-900">
-                                    {language.flag} {language.name} (
-                                    {language.native})
+                                    {language?.flag} {language?.name} (
+                                    {language?.native})
                                   </h3>
                                   <div className="flex items-center text-xs text-gray-500">
                                     <CheckCircle
@@ -985,14 +985,14 @@ In this video, we'll cover the key features of our retirement plan, including co
                               >
                                 <div className="flex items-center">
                                   <span className="text-lg mr-2">
-                                    {language.flag}
+                                    {language?.flag}
                                   </span>
                                   <span className="font-medium text-gray-900">
-                                    {language.name}
+                                    {language?.name}
                                   </span>
                                 </div>
                                 <select className="block w-48 pl-3 pr-10 py-2 text-sm border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md">
-                                  {language.voiceOptions.map((voice, index) => (
+                                  {language?.voiceOptions.map((voice, index) => (
                                     <option key={index} value={voice}>
                                       {voice}
                                     </option>
@@ -1116,11 +1116,11 @@ In this video, we'll cover the key features of our retirement plan, including co
                               <div className="flex items-center justify-between mb-3">
                                 <div className="flex items-center">
                                   <div className="text-lg mr-2">
-                                    {language.flag}
+                                    {language?.flag}
                                   </div>
                                   <div>
                                     <h3 className="font-medium text-gray-900">
-                                      {language.name}
+                                      {language?.name}
                                     </h3>
                                     <p className="text-xs text-gray-500">
                                       {langCode === "es"
