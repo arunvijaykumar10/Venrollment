@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate  } from "react-router-dom";
 import AuthPages from "../pages/Auth";
 import Dashboard from "../pages/Dashboard";
 import SettingsPage from "../pages/Settings";
@@ -22,6 +22,7 @@ const AppRoutes = () => {
       <Route path="/brandkit" element={<BrandKit />} />
       <Route path="/videoplayer" element={<VideoPlayer />} />
       <Route path="/rbacmanagement" element={<RBACManagement/>} />
+      <Route path="*" element={<Navigate to="/auth" replace />} />
     </Routes>
   );
 };

@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import venroll3 from './images/venroll3.jpeg';
+import venroll7 from './images/venroll7.jpeg';
 
 const VideoPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -40,6 +42,9 @@ const VideoPlayer = () => {
     { id: "ja", name: "Japanese", flag: "🇯🇵" },
   ];
 
+  const images = [
+    { id: 7, src: venroll7, alt: "Video 7" }
+  ];
   const qualityOptions = ["480p", "720p", "1080p"];
   const speedOptions = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
 
@@ -109,7 +114,7 @@ const VideoPlayer = () => {
       >
         {/* Video placeholder */}
         <img
-          src="/src/pages/images/venroll3.jpeg"
+          src={venroll3}
           alt="Video player"
           className="w-full h-full object-contain"
         />
@@ -490,7 +495,7 @@ const VideoPlayer = () => {
             >
               <div className="relative">
                 <img
-                  src={`/src/pages/images/venroll7.jpeg`}
+                  src={images[0].src}
                   alt={`Related video ${item}`}
                   className="w-full h-32 object-cover"
                 />

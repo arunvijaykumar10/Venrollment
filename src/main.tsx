@@ -6,7 +6,7 @@ import AppRoutes from "./routes/AppRoutes"; // Import the routes
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/TNVRKSJEN/venrollment">
       <AppRoutes />
     </BrowserRouter>
   </StrictMode>

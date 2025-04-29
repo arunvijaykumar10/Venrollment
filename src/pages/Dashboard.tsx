@@ -20,10 +20,17 @@ import {
   LogOut,
   Settings,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import venroll1 from './images/venroll1.jpeg';
+import venroll2 from './images/venroll2.jpeg';
+import venroll3 from './images/venroll3.jpeg';
+import venroll4 from './images/venroll4.jpeg';
+import venroll5 from './images/venroll5.jpeg';
+import venroll6 from './images/venroll6.jpeg';
+import { useNavigate, Link  } from "react-router-dom";
 
 const Dashboard = () => {
   // State for view toggle (grid vs list)
+  const imagePath = '/TNVRKSJEN/venrollment/images/venroll3.jpeg';
   const [viewMode, setViewMode] = useState("grid");
 
   // State for sort direction
@@ -48,42 +55,42 @@ const Dashboard = () => {
     {
       id: 1,
       name: "Retirement Benefits Introduction",
-      thumbnail: "/src/pages/images/venroll1.jpeg",
+      thumbnail: venroll1,
       created: "2025-04-15T10:30:00",
       modified: "2025-04-25T14:22:00",
     },
     {
       id: 2,
       name: "Health Insurance Explainer",
-      thumbnail: "/src/pages/images/venroll2.jpeg",
+      thumbnail: venroll2,
       created: "2025-04-10T08:15:00",
       modified: "2025-04-22T11:45:00",
     },
     {
       id: 3,
       name: "401k Options Overview",
-      thumbnail: "/src/pages/images/venroll3.jpeg",
+      thumbnail: venroll3,
       created: "2025-04-05T15:45:00",
       modified: "2025-04-20T09:30:00",
     },
     {
       id: 4,
       name: "Employee Benefits Onboarding",
-      thumbnail: "/src/pages/images/venroll4.jpeg",
+      thumbnail: venroll4,
       created: "2025-04-02T11:20:00",
       modified: "2025-04-18T16:15:00",
     },
     {
       id: 5,
       name: "Healthcare Enrollment Process",
-      thumbnail: "/src/pages/images/venroll5.jpeg",
+      thumbnail: venroll5,
       created: "2025-03-28T14:10:00",
       modified: "2025-04-17T10:05:00",
     },
     {
       id: 6,
       name: "Pension Plan Details",
-      thumbnail: "/src/pages/images/venroll6.jpeg",
+      thumbnail: venroll6,
       created: "2025-03-22T09:40:00",
       modified: "2025-04-15T13:50:00",
     },
@@ -91,6 +98,7 @@ const Dashboard = () => {
 
   // Function to create a new project
   const handleCreateProject = () => {
+    navigate('/videoeditor');
     const newProject = {
       id: projects.length + 1,
       name: "New Project",
@@ -168,7 +176,9 @@ const Dashboard = () => {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           <div className="flex items-center">
-            <div className="font-bold text-2xl text-blue-600">Venrollment</div>
+            <Link to="/dashboard" className="font-bold text-2xl text-blue-600">
+              Venrollment
+            </Link>
 
             {/* <img
               src="/api/placeholder/120/32"
@@ -184,15 +194,9 @@ const Dashboard = () => {
             >
               Access Control
             </button>
-            <button className="text-gray-600 hover:text-gray-900">
-              <Bell size={20} />
-            </button>
-            <button className="text-gray-600 hover:text-gray-900">
-              <HelpCircle size={20} />
-            </button>
             <button
               className="text-gray-600 hover:text-gray-900"
-              onClick={() => navigate("/brandkit")}
+              onClick={() => navigate('/brandkit')}
             >
               <Settings size={20} />
             </button>
@@ -218,21 +222,21 @@ const Dashboard = () => {
                   </a>
                   </a> */}
                   {/* > */}
-                  <a
-                    href="/settings"
+                  <Link
+                    to="/settings"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Settings
-                  </a>
-                  <a
-                    href="#logout"
+                  </Link>
+                  <Link
+                    to="#logout"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     <div className="flex items-center">
                       <LogOut size={16} className="mr-2" />
                       Sign out
                     </div>
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
@@ -246,7 +250,7 @@ const Dashboard = () => {
           <h1 className="text-2xl font-semibold text-gray-900">My Projects</h1>
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center transition-colors"
-            onClick={() => navigate("/videoeditor")}
+            onClick={handleCreateProject}
           >
             <Plus size={20} className="mr-2" />
             Create New Project
@@ -347,17 +351,19 @@ const Dashboard = () => {
         {/* Project Grid */}
         {viewMode === "grid" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sortedProjects.map((project) => (
+            {projects.map((project) => (
               <div
                 key={project.id}
                 className="bg-white rounded-lg shadow overflow-hidden"
               >
                 <div className="relative">
+                <Link to="/videoeditor">
                   <img
                     src={project.thumbnail}
                     alt={project.name}
                     className="w-full h-40 object-cover"
                   />
+                  </Link>
                   <div className="absolute top-2 right-2">
                     <button
                       className="p-1 bg-white rounded-full shadow-md hover:bg-gray-100"
@@ -367,23 +373,26 @@ const Dashboard = () => {
                         )
                       }
                     >
-                      <MoreVertical size={18} className="text-gray-600" />
+                      <MoreVertical size={20} className="text-gray-600" />
                     </button>
 
                     {activeProjectMenu === project.id && (
                       <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                        <a
-                          href={`/videoeditor`}
+                        <Link
+                          to="/videoeditor"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         >
                           <div className="flex items-center">
                             <Edit3 size={16} className="mr-2" />
                             Edit Project
                           </div>
-                        </a>
+                        </Link>
                         <button
                           className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          onClick={() => handleDuplicateProject(project.id)}
+                          onClick={() => {
+                            setProjects(projects.filter(p => p.id !== project.id));
+                            setActiveProjectMenu(null);
+                          }}
                         >
                           <div className="flex items-center">
                             <Copy size={16} className="mr-2" />
@@ -405,9 +414,13 @@ const Dashboard = () => {
                 </div>
 
                 <div className="p-4">
-                  <h3 className="text-lg font-medium text-gray-900 mb-1 truncate">
-                    {project.name}
-                  </h3>
+                <Link
+                  to="/videoeditor"
+                  className="text-lg font-medium text-gray-900 mb-1 truncate"
+                >
+                  {project.name}
+                </Link>
+
                   <div className="flex items-center text-sm text-gray-500">
                     <Clock size={14} className="mr-1" />
                     <span>Modified {formatDate(project.modified)}</span>
@@ -434,12 +447,12 @@ const Dashboard = () => {
                         />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <a
-                          href={`/editor/${project.id}`}
+                        <Link
+                          to={`/editor/${project.id}`}
                           className="text-sm font-medium text-blue-600 hover:text-blue-800 truncate"
                         >
                           {project.name}
-                        </a>
+                        </Link>
                         <div className="mt-1 flex items-center text-xs text-gray-500">
                           <div className="flex items-center mr-3">
                             <Calendar size={14} className="mr-1" />
@@ -454,13 +467,13 @@ const Dashboard = () => {
                     </div>
 
                     <div className="ml-4 flex-shrink-0 flex items-center">
-                      <a
-                        href={`/editor/${project.id}`}
+                      <Link
+                        to={`/editor/${project.id}`}
                         className="mr-3 text-blue-600 hover:text-blue-800"
                         title="Edit Project"
                       >
                         <Edit3 size={18} />
-                      </a>
+                      </Link>
 
                       <div className="relative">
                         <button
