@@ -18,7 +18,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const RBACManagement = () => {
-  const [activeTab, setActiveTab] = useState("roles");
+  const [activeTab, setActiveTab] = useState("users");
   const [expandedRole, setExpandedRole] = useState("plan_advisor");
   const [showAddUserModal, setShowAddUserModal] = useState(false);
   const [showPermissionDetails, setShowPermissionDetails] = useState(false);

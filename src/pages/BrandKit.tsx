@@ -1,6 +1,7 @@
 import { Check, Plus, Save, Trash2, Upload } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const BrandKit = () => {
   const [selectedColors, setSelectedColors] = useState([
@@ -62,7 +63,7 @@ const BrandKit = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Header */}
+      <Header />
       <header className="bg-white shadow">
         <div className="mx-auto px-4 py-6 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">Brand Kit</h1>
