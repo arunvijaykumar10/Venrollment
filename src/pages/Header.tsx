@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, User, Bell, LogOut, Settings } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link   } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,7 +10,9 @@ const Header = () => {
     <header className="bg-white shadow-sm">
       <div className="  flex justify-between  h-16">
         <div className="flex items-center">
-          <div className="font-bold text-2xl text-blue-600">Venrollment</div>
+          <Link to="/dashboard" className="font-bold text-2xl text-blue-600">
++           Venrollment
++         </Link>
         </div>
 
         <div className="flex items-center space-x-4">
@@ -28,7 +30,7 @@ const Header = () => {
             </button> */}
           <button
             className="text-gray-600 hover:text-gray-900"
-            onClick={() => navigate("/brandkit")}
+            onClick={() => navigate('/brandkit')}
           >
             <Settings size={20} />
           </button>
@@ -54,21 +56,21 @@ const Header = () => {
                   </a>
                   </a> */}
                 {/* > */}
-                <a
-                  href="/settings"
+                <Link
+                  to="/settings"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Settings
-                </a>
-                <a
-                  href="#logout"
+                </Link>
+                <Link
+                  to="#logout"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   <div className="flex items-center">
                     <LogOut size={16} className="mr-2" />
                     Sign out
                   </div>
-                </a>
+                </Link>
               </div>
             )}
           </div>
