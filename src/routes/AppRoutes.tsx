@@ -26,6 +26,7 @@ const AppRoutes = () => {
         <Route path="videoplayer" element={<VideoPlayer />} />
         <Route path="rbacmanagement" element={<RBACManagement />} />
         <Route path="audiotranslation" element={<AudioTranslationTool />} />
+        <Route path="*" element={<Navigate to="auth" replace />} />
       </Route>
     </Routes>
   );
